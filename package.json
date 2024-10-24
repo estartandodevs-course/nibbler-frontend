@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write src",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
