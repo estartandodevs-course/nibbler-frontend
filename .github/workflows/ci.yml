@@ -1,4 +1,4 @@
-name: Kognito Deploy
+name: Nibbler Deploy
 
 on:
   push:
