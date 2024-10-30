@@ -9,6 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write src",
+    "check": "prettier --check src",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky install"
   },
   "private": true,
