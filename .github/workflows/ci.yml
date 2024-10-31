@@ -1,4 +1,4 @@
-name: Nibbler Deploy
+name: CI
 
 on:
   push:
