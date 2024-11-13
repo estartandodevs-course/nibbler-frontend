@@ -3,21 +3,21 @@
 @import 'base/fonts';
 
 //mixins
-@mixin headings-font($font-size, $line-height){
+@mixin headings-font($font-size, $line-height) {
   font-family: $primary-font;
   font-weight: bold;
   font-size: $font-size;
   line-height: $line-height;
 }
 
-@mixin body-font($font-weight){
+@mixin body-font($font-weight) {
   font-family: $secondary-font;
   font-weight: $font-weight;
   font-size: 18px;
   line-height: 24px;
 }
 
-@mixin buttons(){
+@mixin buttons() {
   font-family: $secondary-font;
   font-weight: 600;
   font-size: 18px;
@@ -25,19 +25,23 @@
 }
 
 @mixin input() {
-  $input-background-color: #F4F4F5;
+  $input-background-color: #f4f4f5;
   border: 0.5px solid;
-  color: #69563A;
+  color: #69563a;
 }
 
 @mixin breakpoint($point) {
   @if $point == mobile {
-    @media (min-width: 375px) { @content; }
-  }
-  @else if $point == tablet {
-    @media (min-width: 836px) { @content; }
-  }
-  @else if $point == desktop {
-    @media (min-width: 1440px) { @content; }
+    @media (min-width: 375px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 836px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1440px) {
+      @content;
+    }
   }
 }
