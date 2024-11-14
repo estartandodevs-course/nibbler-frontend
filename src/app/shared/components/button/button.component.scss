@@ -1,0 +1,64 @@
+@import '../../../../styles/themes/_colors';
+@import '../../../../styles/utilities/_mixins';
+
+.primary {
+  @include buttons();
+  background-color: $primary-color-btn;
+  color: neutral-coor-1000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color-500;
+    color: white;
+  }
+
+  &:focus {
+    background-color: $primary-color-400;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $primary-color-300;
+    color: neutral-coor-1000;
+  }
+
+  &:disabled {
+    background-color: $primary-color-100;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  @include buttons();
+  background: transparent;
+  color: $secondary-color-500;
+  border: 2px solid $secondary-color-500;
+  padding: 10px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-color-100;
+  }
+
+  &:focus {
+    background-color: $secondary-color-200;
+    color: white;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $secondary-color-200;
+    color: white;
+  }
+
+  &:disabled {
+    background: transparent;
+    cursor: not-allowed;
+    color: $secondary-color-100;
+    border: 2px solid $secondary-color-100;
+  }
+}
