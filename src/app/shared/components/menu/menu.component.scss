@@ -1,0 +1,116 @@
+@import '../../../../styles/utilities/_mixins';
+@import '../../../../styles/themes/_colors';
+@import '../../../../styles/base/fonts';
+
+$menu-width: 96px;
+$menu-padding: 20px;
+$menu-margin: auto 0;
+$menu-max-height: 764px;
+$menu-border-radius: 20px;
+$menu-transition: all 0.5s ease;
+$menu-background: $primary-color-100;
+$menu-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.25);
+
+.menu {
+  width: $menu-width;
+  height: auto;
+  padding: $menu-padding;
+  margin: $menu-margin;
+  max-height: $menu-max-height;
+  position: relative;
+  border-radius: $menu-border-radius;
+  transition: $menu-transition;
+  background: $menu-background;
+  box-shadow: $menu-box-shadow;
+
+  .header-menu {
+    display: flex;
+    margin-bottom: $menu-padding;
+
+    .container-logo {
+      gap: 10px;
+      width: 100%;
+      display: flex;
+      min-height: 68px;
+      overflow: hidden;
+      align-items: center;
+
+      .title {
+        font-weight: 700;
+        font-size: 26px;
+        font-family: $primary-font;
+      }
+    }
+
+    .btn-menu {
+      right: -12px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: transparent;
+
+      .icon {
+        transform: rotate(0deg);
+        transition: transform 0.1s linear;
+      }
+
+      .active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .side-nav {
+    height: 90vh;
+    display: flex;
+    overflow: hidden;
+    list-style: none;
+    max-height: 695px;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+      overflow-y: auto;
+    }
+
+    .side-nav-item {
+      width: 100%;
+
+      .side-nav-link {
+        gap: 15px;
+        display: flex;
+        padding: 0 15px;
+        min-height: 48px;
+        align-items: center;
+        text-decoration: none;
+        border: 1px solid transparent;
+
+        .side-nav-link-icon {
+          max-height: 24px;
+          filter: invert(32%) sepia(48%) saturate(366%) hue-rotate(357deg) brightness(90%) contrast(86%);
+        }
+
+        .side-nav-link-text {
+          font-weight: 600;
+          color: $neutral-color-800;
+          font-family: $secondary-font;
+        }
+      }
+    }
+
+    .side-nav-item:hover {
+      .side-nav-link {
+        border-radius: 99px;
+        border-color: $tertiary-color-200;
+        background-color: $tertiary-color-100;
+
+        .side-nav-link-icon {
+          filter: invert(7%) sepia(51%) saturate(423%) hue-rotate(352deg) brightness(92%) contrast(91%);
+        }
+      }
+    }
+  }
+}
+
+.menu-open {
+  width: 280px;
+}
