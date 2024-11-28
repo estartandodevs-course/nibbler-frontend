@@ -1,0 +1,23 @@
+<div [ngClass]="{ menu: true, 'menu-open': isOpen }">
+  <div class="header-menu">
+    <div class="container-logo">
+      <img src="../../../../assets/icons/nibller2-logo.svg" alt="logo nibller" />
+      <h1 class="title" *ngIf="isOpen">Nibbler</h1>
+    </div>
+    <button (click)="toggleMenu()" class="btn-menu">
+      <img
+        class="icon"
+        [ngClass]="{ active: isOpen }"
+        src="../../../../assets/iconsFeel/chevron-right-circle-svgrepo-com.svg"
+        alt="seta abrir e fechar" />
+    </button>
+  </div>
+  <ul class="side-nav">
+    <li class="side-nav-item">
+      <a class="side-nav-link">
+        <img class="side-nav-link-icon" src="../../../../assets/icons/book-open-svgrepo-com 1.svg" alt="icone de agenda" />
+        <span class="side-nav-link-text" *ngIf="isOpen">Agenda</span>
+      </a>
+    </li>
+  </ul>
+</div>
