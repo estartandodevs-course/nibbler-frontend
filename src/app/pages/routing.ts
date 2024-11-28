@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 const PagesRouting: Routes = [
   {
-    path: '',
+    path: 'diario',
     loadChildren: () => import('./diary/diary.module').then((m) => m.DiaryModule),
   },
 ];
