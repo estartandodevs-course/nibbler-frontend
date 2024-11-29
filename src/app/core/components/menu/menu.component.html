@@ -14,9 +14,21 @@
   </div>
   <ul class="side-nav">
     <li class="side-nav-item">
-      <a class="side-nav-link">
+      <a routerLink="agenda" class="side-nav-link">
         <img class="side-nav-link-icon" src="../../../../assets/icons/book-open-svgrepo-com 1.svg" alt="icone de agenda" />
         <span class="side-nav-link-text" *ngIf="isOpen">Agenda</span>
+      </a>
+    </li>
+    <li class="side-nav-item">
+      <a routerLink="pomodoro" class="side-nav-link">
+        <img class="side-nav-link-icon" src="../../../../assets/icons/timer-svgrepo-com.svg" alt="icone do pomodoro" />
+        <span class="side-nav-link-text" *ngIf="isOpen">Pomodoro</span>
+      </a>
+    </li>
+    <li class="side-nav-item">
+      <a routerLink="diario" class="side-nav-link">
+        <img class="side-nav-link-icon" src="../../../../assets/icons/emoji-happy-svgrepo-com.svg" alt="icone do diario" />
+        <span class="side-nav-link-text" *ngIf="isOpen">Meu Diário</span>
       </a>
     </li>
   </ul>
