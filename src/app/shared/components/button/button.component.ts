@@ -10,4 +10,5 @@ export class ButtonComponent {
   @Input() isDisabled: boolean = false;
   @Input() width: string = 'auto';
   @Input() height: string = 'auto';
+  @Input() router: string = '';
 }

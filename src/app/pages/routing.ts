@@ -12,7 +12,7 @@ const PagesRouting: Routes = [
   },
   {
     path: 'diario',
-    loadChildren: () => import('./pomodoro/pomodoro.module').then((m) => m.PomodoroModule),
+    loadChildren: () => import('./diary/diary.module').then((m) => m.DiaryModule),
   },
 ];
 
