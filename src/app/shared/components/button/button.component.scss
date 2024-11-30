@@ -4,7 +4,7 @@
 .primary {
   @include buttons();
   background-color: $primary-color-btn;
-  color: neutral-coor-1000;
+  color: $neutral-color-1000;
   border: none;
   padding: 10px 24px;
   border-radius: 100px;
@@ -22,7 +22,7 @@
 
   &:active {
     background-color: $primary-color-300;
-    color: neutral-coor-1000;
+    color: $neutral-color-1000;
   }
 
   &:disabled {
