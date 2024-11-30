@@ -1,0 +1,46 @@
+@import '../../../../../styles/styles';
+
+section {
+  width: 856px;
+  @include headings-font(26px, 38px);
+
+  .emotion-selector {
+    text-align: center;
+
+    > span {
+      font-size: 22px;
+    }
+    ul {
+      display: inline-flex;
+      gap: 16px;
+
+      li {
+        .img-content {
+          position: relative;
+
+          img {
+            width: 100%;
+            display: block;
+          }
+        }
+
+        .img-content:hover::before {
+          content: "";
+          position: absolute;
+          height: 120px;
+          width: 120px;
+          top: 2px;
+          left: 4px;
+          right: 0;
+          bottom: 0;
+          box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
+          border-radius: 50%;
+        }
+        span {
+          font-size: 18px;
+          // @include body-font(600);
+        }
+      }
+    }
+  }
+}
