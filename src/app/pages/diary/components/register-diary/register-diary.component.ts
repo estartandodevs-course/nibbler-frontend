@@ -5,4 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './register-diary.component.html',
   styleUrl: './register-diary.component.scss',
 })
-export class RegisterDiaryComponent {}
+export class RegisterDiaryComponent {
+  reflection = {
+    reflectionText: '',
+    emotion: '',
+  };
+
+  submitReflection() {
+    console.log('Reflexão registrada:', this.reflection);
+  }
+}

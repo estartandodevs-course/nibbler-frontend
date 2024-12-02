@@ -11,4 +11,5 @@ export class ButtonComponent {
   @Input() width: string = 'auto';
   @Input() height: string = 'auto';
   @Input() router: string = '';
+  @Input() type: string = 'submit';
 }

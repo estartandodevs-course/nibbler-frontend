@@ -7,6 +7,7 @@ import { HomeDiaryComponent } from './components/home-diary/home-diary.component
 import { RegisterDiaryComponent } from './components/register-diary/register-diary.component';
 import { CalendarDiaryComponent } from './components/calendar-diary/calendar-diary.component';
 import { SharedModule } from '../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HomeDiaryComponent, RegisterDiaryComponent, CalendarDiaryComponent],
@@ -18,6 +19,7 @@ import { SharedModule } from '../../shared/shared.module';
       useFactory: adapterFactory,
     }),
     SharedModule,
+    FormsModule,
   ],
 })
 export class DiaryModule {}
