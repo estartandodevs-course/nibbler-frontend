@@ -1,0 +1,53 @@
+@import '../../../../styles/themes/_colors';
+@import '../../../../styles/base/_fonts';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#speech-bubble {
+  width: 423px;
+  height: 188px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 26px;
+
+  position: relative;
+  word-wrap: break-word;
+  border-radius: 15px;
+  padding: 10px 20px;
+
+  background-color: $bg-color-alternative-3;
+  color: black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin: 10px;
+  }
+
+}
+
+.arrow-direction-right::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -9px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid $bg-color-alternative-3;
+}
+
+.arrow-direction-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid $bg-color-alternative-3;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
