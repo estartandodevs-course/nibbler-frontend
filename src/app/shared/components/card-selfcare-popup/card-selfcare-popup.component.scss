@@ -12,7 +12,6 @@ $cor-do-card-amarelo-escuro: rgba(255, 235, 54, 1);
 body {
   display: grid;
   place-items: center;
-  // padding: 150px;
 }
 
 .card-pausa {
@@ -43,24 +42,32 @@ body {
   }
 }
 
-.itens-pausa{
+.pause-items {
   display: flex;
-  gap: 10px;
+  gap: 32px;
 }
 
 .container {
-  background-color: #FFF9C4;
+  background-color: #fff9c4;
   width: 982px;
-  height: 931px;
+  height: 800px; //alterado de 931 para 800
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 111px;
-
+  gap: 70px;
+  padding: 30px;
+  border-radius: 32px;
 }
 
 .button-card {
   cursor: pointer;
   border-radius: 32px;
-  border-color: #FFF9C4;
+  border-color: #fff9c4;
+}
+
+.nilo-speech-bubble {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
 }
