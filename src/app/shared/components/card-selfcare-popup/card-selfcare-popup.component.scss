@@ -1,0 +1,73 @@
+$btn-primario: rgba(86, 177, 114, 1);
+$cor-do-card-amarelo-claro: rgba(255, 249, 196, 1);
+$cor-do-card-amarelo-escuro: rgba(255, 235, 54, 1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// só p visualizar
+body {
+  display: grid;
+  place-items: center;
+}
+
+.card-pausa {
+  width: 276px;
+  height: 332px;
+  background-color: $cor-do-card-amarelo-claro;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid;
+  border-color: rgba(167, 150, 0, 1);
+  border-radius: 32px;
+  gap: 16px;
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    gap: 12px;
+
+    width: 188px;
+    height: 20px;
+    text-align: center;
+  }
+}
+
+.pause-items {
+  display: flex;
+  gap: 32px;
+}
+
+.container {
+  background-color: #fff9c4;
+  width: 982px;
+  height: 800px; //alterado de 931 para 800
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  padding: 30px;
+  border-radius: 32px;
+}
+
+.button-card {
+  cursor: pointer;
+  border-radius: 32px;
+  border-color: #fff9c4;
+}
+
+.nilo-speech-bubble {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
