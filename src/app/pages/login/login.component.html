@@ -1,0 +1,61 @@
+<div class="main">
+  <div class="introduction">
+    <div class="content-intro">
+      <h1>Conecte-se para continuar sua jornada e alcançar suas metas. Vamos juntos conquistar mais hoje!</h1>
+      <img src="../../../assets/imgBg/nilo-home.png" alt="icone nilo" />
+    </div>
+  </div>
+  <div class="login">
+    <div class="hearder"><img src="../../../assets/iconsFeel/noz.png" alt="icone de noz" /></div>
+
+    <div class="content-login">
+      <h2 class="">Bem-vindo de volta!</h2>
+      <form>
+        <app-input
+          [type]="'email'"
+          [title]="'E-mail'"
+          [name]="'email'"
+          [ariaLabel]="'Digite seu e-mail'"
+          [placeholder]="'Digite seu e-mail'"
+          [required]="true">
+        </app-input>
+        <app-input
+          [type]="visible ? 'password' : 'text'"
+          [title]="'Senha'"
+          [name]="'senha'"
+          [ariaLabel]="'Digite sua senha'"
+          [placeholder]="'Digite sua senha'"
+          [required]="true">
+          <button
+            type="button"
+            class="eyeicon"
+            (click)="viewpass()"
+            (keydown.enter)="viewpass()"
+            (keydown.space)="viewpass()"
+            aria-label="Mostrar ou ocultar senha">
+            <img
+              [src]="
+                visible ? '../../../../assets/icons/eye-off-svgrepo-com.svg' : '../../../../assets/icons/eye-svgrepo-com 1.svg'
+              "
+              alt="Ícone de mostrar ou ocultar senha" />
+          </button>
+        </app-input>
+
+        <button type="submit" class="bnt">Enviar</button>
+      </form>
+
+      <div class="content-platforms">
+        <div class="content-text">
+          <hr />
+          <p>Ou entre com</p>
+          <hr />
+        </div>
+        <div class="platforms">
+          <img src="../../../assets/iconsFeel/Google.svg" alt="icone Google" />
+          <img src="../../../assets/iconsFeel/facebook.svg" alt="icone facebook" />
+        </div>
+      </div>
+      <h3>Ainda não tem uma conta? Cadastre</h3>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,2 @@
-@import 'base/_fonts';
-@import 'base/_reset';
-@import 'components/_components';
-@import 'themes/_colors';
-@import 'themes/_spacing';
-@import 'utilities/_mixins';
+@import '../../node_modules/angular-calendar/css/angular-calendar.css';
+@import './styles.scss';
