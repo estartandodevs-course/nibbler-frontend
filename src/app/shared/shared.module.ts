@@ -10,6 +10,6 @@ import { SpeechBubbleComponent } from './components/speech-bubble/speech-bubble.
 @NgModule({
   declarations: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, SpeechBubbleComponent, InputComponent],
   imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, InputComponent],
+  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, RouterModule, InputComponent],
 })
 export class SharedModule {}
