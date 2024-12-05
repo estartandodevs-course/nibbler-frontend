@@ -56,8 +56,9 @@ section {
             }
           }
 
-          .img-content:hover::before, input[type="radio"]:checked + label .img-content::before  {
-            content: "";
+          .img-content:hover::before,
+          input[type='radio']:checked + label .img-content::before {
+            content: '';
             position: absolute;
             height: 113px;
             width: 113px;
@@ -68,7 +69,6 @@ section {
             box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
             border-radius: 50%;
           }
-
 
           span {
             font-size: 18px;

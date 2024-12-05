@@ -10,6 +10,6 @@ export class InputComponent {
   @Input() name: string = '';
   @Input() required: boolean = false;
   @Input() ariaLabel: string = '';
-  @Input() placeholder: string = '';
-  @Input() title: string = '';
+  @Input() placeholder: string = 'Digite aqui...';
+  @Input() title: string = 'Digite aqui...';
 }
