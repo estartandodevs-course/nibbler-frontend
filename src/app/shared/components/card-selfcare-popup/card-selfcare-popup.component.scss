@@ -43,24 +43,23 @@ body {
   }
 }
 
-.itens-pausa{
+.itens-pausa {
   display: flex;
   gap: 10px;
 }
 
 .container {
-  background-color: #FFF9C4;
+  background-color: #fff9c4;
   width: 982px;
   height: 931px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 111px;
-
 }
 
 .button-card {
   cursor: pointer;
   border-radius: 32px;
-  border-color: #FFF9C4;
+  border-color: #fff9c4;
 }
