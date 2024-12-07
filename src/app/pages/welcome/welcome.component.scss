@@ -1,0 +1,35 @@
+@import '../../../styles/base/fonts';
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .hearder {
+    padding: 30px 150px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .content-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 950px;
+
+    h1 {
+      font-size: 700;
+      font-family: $primary-font;
+      max-width: 710px;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      max-width: 950px;
+      margin: 20px 0 35px;
+      font-family: $primary-font;
+      font-weight: 700;
+    }
+  }
+}
