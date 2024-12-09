@@ -1,0 +1,104 @@
+<div class="pomodoro-container">
+  <div class="pomodoro-main">
+    <div class="timer-section">
+      <div class="timer-modes">
+        <button
+          *ngFor="let mode of modes"
+          class="mode-button"
+          [ngClass]="{
+            active: activeMode === mode.value,
+            focus: mode.value === 'focus',
+            break: mode.value === 'break',
+            pause: mode.value === 'pause',
+          }"
+          (click)="setActiveMode(mode.value)">
+          <img [src]="mode.icon" [alt]="mode.altText" />
+          <span>{{ mode.label }}</span>
+        </button>
+      </div>
+
+      <div class="timer-display">
+        <div class="circle">
+          <span class="time">{{ formatTime() }}</span>
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <button class="controls-button">
+          <img src="assets/imgPomodoro/note.svg" alt="music note" />
+        </button>
+        <button class="controls-button" (click)="openSettings()">
+          <img src="assets/imgPomodoro/dots.svg" alt="Configurações" />
+        </button>
+        <button class="controls-button play-btn" (click)="toggleTimer()">
+          <img *ngIf="!isRunning" src="assets/imgPomodoro/play.svg" alt="Play" />
+          <img *ngIf="isRunning" src="assets/imgPomodoro/pause.svg" alt="Pause" />
+        </button>
+        <button class="controls-button">
+          <img src="assets/imgPomodoro/next.svg" alt="Skip" />
+        </button>
+        <button class="controls-button" (click)="resetTimer()">
+          <img src="assets/imgPomodoro/return.svg" alt="Reset" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Configuração</h2>
+        <button class="close-button" (click)="closeSettings()">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="settings-group">
+          <label for="sound-select">Som</label>
+          <select id="sound-select">
+            <option value="white-noise">Ruído branco</option>
+            <option value="forest">Som de Floresta</option>
+            <option value="rain">Som de Chuva</option>
+            <option value="cafe">Ambiente de Café</option>
+            <option value="jazz">Música Jazz Lenta</option>
+            <option value="fireplace">Fogueira</option>
+            <option value="wind">Vento</option>
+            <option value="stream">Riacho</option>
+          </select>
+        </div>
+
+        <div class="settings-group">
+          <label for="alarm-select">Som do alarme</label>
+          <select id="alarm-select">
+            <option value="bell">Sino</option>
+            <option value="kitchen">Cozinha</option>
+            <option value="crystal">Cristal</option>
+          </select>
+        </div>
+
+        <div class="settings-group times">
+          <label for="focus-time">Tempo de foco</label>
+          <input id="focus-time" type="number" value="25" />
+        </div>
+
+        <div class="settings-group times">
+          <label for="short-break-time">Pausa curta</label>
+          <input id="short-break-time" type="number" value="5" />
+        </div>
+
+        <div class="settings-group times">
+          <label for="long-break-time">Pausa longa</label>
+          <input id="long-break-time" type="number" value="15" />
+        </div>
+
+        <div class="settings-group times">
+          <label for="long-break-interval">Intervalo de pausa longa</label>
+          <input id="long-break-interval" type="number" value="4" />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="save-button" (click)="saveSettings()">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
