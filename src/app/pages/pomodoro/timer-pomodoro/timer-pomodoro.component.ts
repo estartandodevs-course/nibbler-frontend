@@ -18,6 +18,7 @@ export class TimerPomodoroComponent implements OnInit {
   isRunning: boolean = false;
   interval!: ReturnType<typeof setInterval>;
   previousFocusTime: number = 25 * 60;
+  audioPlayer: HTMLAudioElement | null = null;
 
   ngOnInit(): void {
     const savedTimerValue = localStorage.getItem('timerValue');
@@ -32,6 +33,7 @@ export class TimerPomodoroComponent implements OnInit {
   }
 
   setActiveMode(mode: string): void {
+    this.stopSound();
     const selectedMode = this.modes.find((m) => m.value === mode);
     if (!selectedMode) return;
 
@@ -49,9 +51,11 @@ export class TimerPomodoroComponent implements OnInit {
     }
 
     this.activeMode = mode;
+    this.stopSound();
     this.saveState();
     this.startTimer();
   }
+
   formatTime(): string {
     const minutes = Math.floor(this.timerValue / 60)
       .toString()
@@ -87,6 +91,7 @@ export class TimerPomodoroComponent implements OnInit {
   stopTimer(): void {
     this.isRunning = false;
     clearInterval(this.interval);
+    this.stopSound();
     this.saveState();
   }
 
@@ -133,8 +138,21 @@ export class TimerPomodoroComponent implements OnInit {
   playSound(type: 'background' | 'alarm'): void {
     const soundFile = localStorage.getItem(type === 'background' ? 'selectedSound' : 'selectedAlarm');
     if (soundFile) {
-      const audio = new Audio(`assets/sounds/${soundFile}.mp3`);
-      audio.play();
+      if (this.audioPlayer) {
+        this.audioPlayer.pause();
+        this.audioPlayer.currentTime = 0;
+      }
+      this.audioPlayer = new Audio(`assets/sounds/${soundFile}.mp3`);
+      this.audioPlayer.loop = type === 'background';
+      this.audioPlayer.play();
+    }
+  }
+
+  stopSound(): void {
+    if (this.audioPlayer) {
+      this.audioPlayer.pause();
+      this.audioPlayer.currentTime = 0;
+      this.audioPlayer = null;
     }
   }
 
