@@ -1,0 +1,105 @@
+@import '../../../styles/themes/colors';
+@import '../../../styles/base/fonts';
+.main {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .introduction {
+    width: 50%;
+    background: $primary-color-200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        font-weight: 700;
+        max-width: 610px;
+        text-align: center;
+        font-family: $primary-font;
+      }
+    }
+  }
+  .login {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    .hearder {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: -20px;
+    }
+
+    .content-login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        font-size: 54px;
+        font-weight: 700;
+        margin: 0 0px 30px;
+        font-family: $primary-font;
+      }
+      .eyeicon {
+        background: transparent;
+        position: absolute;
+        right: 5px;
+        top: 11px;
+        cursor: pointer;
+      }
+
+      .bnt {
+        width: 430px;
+        height: 56px;
+        border-radius: 100px;
+        background: $primary-color-100;
+        font-family: $secondary-font;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
+      hr {
+        border: 1px solid #807d7d;
+        width: 106px;
+      }
+
+      .content-platforms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0 20px;
+        .content-text {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          color: $neutral-other-social-text;
+          p {
+            font-size: 16px;
+            font-weight: 900;
+            font-family: $secondary-font;
+          }
+        }
+        .platforms {
+          display: flex;
+          gap: 60px;
+          margin: 20px;
+        }
+      }
+      h3 {
+        font-family: $secondary-font;
+        font-weight: 900;
+        font-size: 16px;
+      }
+    }
+  }
+}

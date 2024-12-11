@@ -1,0 +1,41 @@
+@import '../../../../styles/themes/colors';
+@import '../../../../styles/base/fonts';
+
+.field {
+  position: relative;
+  margin: 20px 0;
+}
+
+.field label {
+  position: absolute;
+  left: 15px;
+  transform: translateY(-50%);
+  color: $neutral-color-1000;
+  padding: 0 5px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  top: 0;
+  max-width: 65px;
+  font-size: 15px;
+  background-color: $neutral-bg-light;
+}
+
+.field input {
+  width: 100%;
+  max-width: 430px;
+  height: 56px;
+  font-size: 15px;
+  color: $neutral-color-700;
+  padding: 0 15px;
+  background: transparent;
+  border: 1px solid $secondary-color-black;
+  outline: none;
+  border-radius: 5px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px $neutral-bg-light inset;
+}
