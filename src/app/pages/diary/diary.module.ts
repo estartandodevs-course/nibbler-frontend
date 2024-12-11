@@ -8,9 +8,15 @@ import { RegisterDiaryComponent } from './components/register-diary/register-dia
 import { CalendarDiaryComponent } from './components/calendar-diary/calendar-diary.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { LOCALE_ID } from '@angular/core';
+import { RegisterDetailComponent } from './components/register-detail/register-detail.component';
+
+registerLocaleData(localePt);
 
 @NgModule({
-  declarations: [HomeDiaryComponent, RegisterDiaryComponent, CalendarDiaryComponent],
+  declarations: [HomeDiaryComponent, RegisterDiaryComponent, CalendarDiaryComponent, RegisterDetailComponent],
   imports: [
     CommonModule,
     DiaryRoutingModule,
@@ -20,6 +26,9 @@ import { FormsModule } from '@angular/forms';
     }),
     SharedModule,
     FormsModule,
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }, // Configuração de idioma global
   ],
 })
 export class DiaryModule {}

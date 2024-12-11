@@ -1,0 +1,80 @@
+<div class="page-detail">
+  <header>
+    <span>03/11/2024 - Sexta-feira</span>
+
+    <button routerLink="/diario/calendar">
+      <img src="assets/icons/weekly-calendar-daily-calendar 1.svg" alt="" />
+      Meus Registros
+    </button>
+  </header>
+  <form #diaryForm="ngForm">
+    <div class="emotion-selector">
+      <span>Como você está se sentindo hoje?</span>
+      <ul>
+        <li>
+          <input type="radio" name="emotion" id="happy" value="happy" />
+          <label for="happy">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-happy.png" alt="" />
+            </div>
+            <span>Feliz</span>
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="emotion" id="good" value="good" />
+          <label for="good">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-good.png" alt="" />
+            </div>
+            <span>Bem</span>
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="emotion" id="neutral" value="neutral" />
+          <label for="neutral">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-neutral.png" alt="" />
+            </div>
+            <span>Neutro</span>
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="emotion" id="anxious" value="anxious" />
+          <label for="anxious">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-anxious.png" alt="" />
+            </div>
+            <span>Ansioso</span>
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="emotion" id="sad" value="sad" />
+          <label for="sad">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-sad.png" alt="" />
+            </div>
+            <span>Triste</span>
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="emotion" id="horrible" value="horrible" />
+          <label for="horrible">
+            <div class="img-content">
+              <img src="assets/iconsFeel/icon-feel-horrible.png" alt="" />
+            </div>
+            <span>Horrível</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="daily-reflections">
+      <span>Suas Reflexões do Dia</span>
+      <textarea
+        name="reflectionText"
+        id="reflectionText"
+        placeholder="Escreva aqui suas ideias, reflexões ou qualquer coisa que queira lembrar. Este é seu espaço livre para anotações.">
+      </textarea>
+    </div>
+    <button type="submit" class="primary">Register</button>
+  </form>
+</div>

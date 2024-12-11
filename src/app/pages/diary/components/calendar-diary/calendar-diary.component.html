@@ -1,3 +1,62 @@
-<div class="calendar-container">
-  <mwl-calendar-month-view [viewDate]="viewDate" [events]="[]"> </mwl-calendar-month-view>
+<div class="calendar-home">
+  <button routerLink="/diario/register">
+    <img src="../../../../../assets/icons/arrow-left-circle-svgrepo-com.svg" alt="" />
+  </button>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button (click)="goToCurrentMonth()" class="btn-today">Hoje</button>
+      <div class="chance-month">
+        <button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <img src="../../../../../assets/icons/arrow-left-circle-svgrepo-com.svg" alt="" />
+        </button>
+        <!-- <p>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</p> -->
+        <p>{{ viewDate | date: 'MMMM - y' : 'pt-BR' | titlecase }}</p>
+        <button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <img src="../../../../../assets/icons/arrow-right-circle-svgrepo-com.svg" alt="" />
+        </button>
+      </div>
+      <div class="chance-view">
+        <div>
+          <input type="radio" id="month" name="change" checked />
+          <label for="month">Mês</label>
+        </div>
+        <div>
+          <input type="radio" id="week" name="change" />
+          <label for="week">Semana</label>
+        </div>
+      </div>
+    </div>
+    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" (dayClicked)="dayClicked($event.day)" locale="pt-BR">
+    </mwl-calendar-month-view>
+
+    <div *ngIf="activeDayIsOpen" class="event-modal">
+      <h2>Meu registro diário</h2>
+      <form #diaryForm="ngForm">
+        <div class="emotion-selector">
+          <span>Como você está se sentindo hoje?</span>
+          <ul>
+            <li>
+              <input type="radio" name="emotion" id="horrible" value="horrible" />
+              <label for="horrible">
+                <div class="img-content">
+                  <img src="assets/iconsFeel/icon-feel-horrible.png" alt="" />
+                </div>
+                <span>Horrível</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="daily-reflections">
+          <span>Suas Reflexões do Dia</span>
+          <textarea
+            name="reflectionText"
+            id="reflectionText"
+            placeholder="Escreva aqui suas ideias, reflexões ou qualquer coisa que queira lembrar. Este é seu espaço livre para anotações.">
+          </textarea>
+        </div>
+        <button type="submit" class="primary">Editar</button>
+      </form>
+      <app-button variant="secondary" type="button" (clicked)="closeOpenMonthViewDay()"> Sair </app-button>
+    </div>
+  </div>
 </div>
