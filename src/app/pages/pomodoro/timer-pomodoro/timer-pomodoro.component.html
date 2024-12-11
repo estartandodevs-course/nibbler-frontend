@@ -1,5 +1,25 @@
 <div class="pomodoro-container">
   <div class="pomodoro-main">
+    <div class="pomodoro-header">
+      <button class="write-button" (click)="toggleNote()">
+        <img src="assets/imgPomodoro/pencil.svg" alt="Ícone de Caneta" class="write-icon" />
+        <span>Escrever</span>
+      </button>
+      <div *ngIf="isNoteOpen" class="note-balloon">
+        <div class="main-note">
+          <textarea [(ngModel)]="noteContent" placeholder="Adicione aqui as suas anotações"></textarea>
+
+          <img
+            src="assets/imgPomodoro/close.svg"
+            alt="Fechar"
+            (click)="closeNote()"
+            tabindex="0"
+            (keydown.enter)="closeNote()"
+            (keydown.space)="closeNote()" />
+        </div>
+        <button (click)="saveNote()">Salvar</button>
+      </div>
+    </div>
     <div class="timer-section">
       <div class="timer-modes">
         <button
@@ -55,6 +75,7 @@
         <div class="settings-group">
           <label for="sound-select">Som</label>
           <select id="sound-select">
+            <option value="none">Nenhum</option>
             <option value="white-noise">Ruído branco</option>
             <option value="forest">Som de Floresta</option>
             <option value="rain">Som de Chuva</option>
