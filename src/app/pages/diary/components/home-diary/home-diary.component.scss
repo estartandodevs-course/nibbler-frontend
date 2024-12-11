@@ -1,0 +1,21 @@
+@import '../../../../../styles/styles';
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+
+  .msg-welcome {
+    display: inline-flex;
+    align-items: center;
+
+    p {
+      width: 416px;
+      background-color: $bg-color-alternative-2;
+      padding: $padding-medium;
+      border-radius: $border-radius-medium;
+      @include body-font(600);
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@import '../../../../../styles/styles';
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 856px;
+  @include headings-font(26px, 38px);
+
+  header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      @include buttons();
+      border: 1px solid $neutral-color-1000;
+      border-radius: $border-radius-large;
+      padding: $padding-small-medium $padding-medium;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    .emotion-selector {
+      background-color: $bg-popup-error;
+      padding: $padding-large;
+      border: 1px solid $border-popup-error;
+      border-radius: $border-radius-large;
+      text-align: center;
+
+      > span {
+        font-size: 22px;
+      }
+      ul {
+        display: inline-flex;
+        gap: 16px;
+
+        li {
+          input {
+            display: none;
+          }
+          .img-content {
+            position: relative;
+
+            img {
+              width: 100%;
+              display: block;
+            }
+          }
+
+          .img-content:hover::before,
+          input[type='radio']:checked + label .img-content::before {
+            content: '';
+            position: absolute;
+            height: 113px;
+            width: 113px;
+            top: 2px;
+            left: 4px;
+            right: 0;
+            bottom: 0;
+            box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
+            border-radius: 50%;
+          }
+
+          span {
+            font-size: 18px;
+            // @include body-font(600);
+          }
+        }
+      }
+    }
+
+    .daily-reflections {
+      display: flex;
+      flex-direction: column;
+      gap: $padding-medium;
+      background-color: $bg-popup-error;
+      padding: $padding-large;
+      border: 1px solid $border-popup-error;
+      border-radius: $border-radius-large;
+
+      span {
+        font-size: 22px;
+      }
+
+      textarea {
+        @include body-font(400);
+        border: none;
+        background-color: transparent;
+        height: 150px;
+        resize: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .primary {
+      align-self: center;
+      @include buttons();
+      background-color: $primary-color-btn;
+      color: $neutral-color-1000;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 100px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color-500;
+        color: white;
+      }
+
+      &:focus {
+        background-color: $primary-color-400;
+        outline: none;
+      }
+    }
+  }
+}

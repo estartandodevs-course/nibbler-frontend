@@ -1,9 +1,13 @@
-@import '../../../styles/main';
+@import '../../../styles/styles';
 main {
   display: flex;
   align-items: center;
   height: 100%;
   padding: $padding-ultra-large;
+
+  header {
+    height: 100%;
+  }
 
   section {
     display: flex;
