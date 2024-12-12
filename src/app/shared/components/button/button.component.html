@@ -1,9 +1,3 @@
-<button
-  [ngClass]="variant"
-  [disabled]="isDisabled"
-  [style.width]="width"
-  [style.height]="height"
-  [routerLink]="router || null"
-  (click)="onClick()">
+<button [ngClass]="variant" [disabled]="isDisabled" [style.width]="width" [style.height]="height" [routerLink]="router">
   <ng-content></ng-content>
 </button>
