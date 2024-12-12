@@ -1,21 +1,21 @@
-<section class="container">
+<section class="container" *ngIf="!videoDisplayed">
   <div class="nilo-speech-bubble">
-    <app-speech-bubble
-      >Ótima escolha! É importante cuidar de você enquanto se mantém produtivo. Escolha uma atividade de autocuidado para
-      recarregar as energias e se preparar para a próxima rodada. Vamos nessa?</app-speech-bubble
-    >
+    <app-speech-bubble>
+      Ótima escolha! É importante cuidar de você enquanto se mantém produtivo. Escolha uma atividade de autocuidado para
+      recarregar as energias e se preparar para a próxima rodada. Vamos nessa?
+    </app-speech-bubble>
     <img src="assets/iconsPopup/nilo-perfil-happy.png" alt="Imagem de perfil do mascote esquilo Nilo sorrindo." />
   </div>
 
   <div class="pause-items">
-    <button class="button-card">
+    <button class="button-card" (click)="selectActivity('stretch')">
       <div class="card-pausa">
         <img src="assets/iconsImgListPause/nilo-stretching.png" alt="Imagem do mascote esquilo alongando." />
         <h1>Vamos nos alongar?</h1>
       </div>
     </button>
 
-    <button class="button-card">
+    <button class="button-card" (click)="selectActivity('breathing')">
       <div class="card-pausa">
         <img
           src="assets/iconsImgListPause/nilo-breathing.png"
@@ -24,12 +24,20 @@
       </div>
     </button>
 
-    <button class="button-card">
+    <button class="button-card" (click)="selectActivity('drinking-water')">
       <div class="card-pausa">
         <img src="assets/iconsImgListPause/nilo-drink-water.png" alt="Imagem do mascote esquilo com um copo d'água." />
         <h1>Vamos nos hidratar?</h1>
       </div>
     </button>
   </div>
-  <app-button>Começar</app-button>
+
+  <app-button (click)="initiateActivity()">Começar</app-button>
 </section>
+
+<div *ngIf="videoDisplayed" class="div-video">
+  <video width="1010" height="637" controls autoplay>
+    <source [src]="videoSrc" type="video/mp4" />
+  </video>
+  <app-button [routerLink]="'/pomodoro/timer'">Voltar para o pomodoro</app-button>
+</div>

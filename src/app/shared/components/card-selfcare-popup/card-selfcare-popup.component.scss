@@ -8,7 +8,6 @@ $cor-do-card-amarelo-escuro: rgba(255, 235, 54, 1);
   box-sizing: border-box;
 }
 
-// só p visualizar
 body {
   display: grid;
   place-items: center;
@@ -50,7 +49,7 @@ body {
 .container {
   background-color: #fff9c4;
   width: 982px;
-  height: 800px; //alterado de 931 para 800
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,4 +69,11 @@ body {
   align-items: center;
   margin-top: 10px;
   gap: 10px;
+}
+
+.div-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
