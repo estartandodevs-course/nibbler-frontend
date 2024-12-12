@@ -31,32 +31,31 @@
 
     <div *ngIf="activeDayIsOpen" class="event-modal">
       <h2>Meu registro diário</h2>
-      <form #diaryForm="ngForm">
+      <div *ngIf="diaryData; else noData" class="modal-info">
         <div class="emotion-selector">
-          <span>Como você está se sentindo hoje?</span>
+          <span>Hoje eu estou me sentindo...</span>
           <ul>
             <li>
-              <input type="radio" name="emotion" id="horrible" value="horrible" />
-              <label for="horrible">
+              <input type="radio" [id]="diaryData.emocao.nome" [value]="diaryData.emocao.nome" checked disabled />
+              <label [for]="diaryData.emocao.nome">
                 <div class="img-content">
-                  <img src="assets/iconsFeel/icon-feel-horrible.png" alt="" />
+                  <img [src]="'assets/iconsFeel/icon-feel-' + diaryData.emocao.nome + '.png'" alt="Emoção" />
                 </div>
-                <span>Horrível</span>
+                <span>{{ diaryData.emocao.nome | titlecase }}</span>
               </label>
             </li>
           </ul>
         </div>
         <div class="daily-reflections">
           <span>Suas Reflexões do Dia</span>
-          <textarea
-            name="reflectionText"
-            id="reflectionText"
-            placeholder="Escreva aqui suas ideias, reflexões ou qualquer coisa que queira lembrar. Este é seu espaço livre para anotações.">
-          </textarea>
+          <textarea name="reflectionText" id="reflectionText" [(ngModel)]="diaryData.conteudo" readonly> </textarea>
         </div>
-        <button type="submit" class="primary">Editar</button>
-      </form>
-      <app-button variant="secondary" type="button" (clicked)="closeOpenMonthViewDay()"> Sair </app-button>
+        <app-button variant="primary" type="button" [router]="['/diario/edit', diaryData.reflexaoId]">Editar</app-button>
+      </div>
+      <ng-template #noData>
+        <p>Nenhum dado para este dia.</p>
+      </ng-template>
+      <app-button variant="secondary" type="button" (click)="closeOpenMonthViewDay()">Sair</app-button>
     </div>
   </div>
 </div>

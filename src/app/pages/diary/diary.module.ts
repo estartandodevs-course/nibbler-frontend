@@ -11,12 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
-import { RegisterDetailComponent } from './components/register-detail/register-detail.component';
+import { RegisterEditComponent } from './components/register-edit/register-edit.component';
 
 registerLocaleData(localePt);
 
 @NgModule({
-  declarations: [HomeDiaryComponent, RegisterDiaryComponent, CalendarDiaryComponent, RegisterDetailComponent],
+  declarations: [HomeDiaryComponent, RegisterDiaryComponent, CalendarDiaryComponent, RegisterEditComponent],
   imports: [
     CommonModule,
     DiaryRoutingModule,

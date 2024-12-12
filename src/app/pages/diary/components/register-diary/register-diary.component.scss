@@ -30,6 +30,9 @@ section {
     gap: 36px;
 
     .emotion-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       background-color: $bg-popup-error;
       padding: $padding-large;
       border: 1px solid $border-popup-error;
@@ -38,6 +41,7 @@ section {
 
       > span {
         font-size: 22px;
+        display: block;
       }
       ul {
         display: inline-flex;
@@ -56,8 +60,9 @@ section {
             }
           }
 
-          .img-content:hover::before, input[type="radio"]:checked + label .img-content::before  {
-            content: "";
+          .img-content:hover::before,
+          input[type='radio']:checked + label .img-content::before {
+            content: '';
             position: absolute;
             height: 113px;
             width: 113px;
@@ -68,7 +73,6 @@ section {
             box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
             border-radius: 50%;
           }
-
 
           span {
             font-size: 18px;

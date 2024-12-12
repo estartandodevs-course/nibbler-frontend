@@ -53,12 +53,11 @@
           cursor: pointer;
         }
 
-        input[type="radio"]:checked + label {
+        input[type='radio']:checked + label {
           background-color: $secondary-color-100;
           color: $neutral-color-900;
         }
       }
-
     }
 
     mwl-calendar-month-view {
@@ -86,7 +85,6 @@
           font-size: 20px;
           font-weight: 600;
         }
-
       }
 
       // .cal-day-cell{
@@ -112,8 +110,9 @@
       h2 {
         font-size: 27px;
       }
-      form {
+      .modal-info {
         display: flex;
+        align-items: center;
         flex-direction: column;
         gap: 16px;
 
@@ -144,11 +143,12 @@
                 }
               }
 
-              .img-content:hover::before, input[type="radio"]:checked + label .img-content::before  {
-                content: "";
+              .img-content:hover::before,
+              input[type='radio']:checked + label .img-content::before {
+                content: '';
                 position: absolute;
-                height: 113px;
-                width: 113px;
+                height: 120px;
+                width: 120px;
                 top: 2px;
                 left: 4px;
                 right: 0;
@@ -156,7 +156,6 @@
                 box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
                 border-radius: 50%;
               }
-
 
               span {
                 font-size: 18px;
@@ -169,6 +168,7 @@
         .daily-reflections {
           display: flex;
           flex-direction: column;
+          width: 100%;
           gap: $padding-medium;
           background-color: $bg-popup-error;
           padding: $padding-large;
@@ -189,27 +189,6 @@
             &:focus {
               outline: none;
             }
-          }
-        }
-
-        .primary {
-          align-self: center;
-          @include buttons();
-          background-color: $primary-color-btn;
-          color: $neutral-color-1000;
-          border: none;
-          padding: 10px 24px;
-          border-radius: 100px;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $primary-color-500;
-            color: white;
-          }
-
-          &:focus {
-            background-color: $primary-color-400;
-            outline: none;
           }
         }
       }

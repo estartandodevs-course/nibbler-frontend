@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeDiaryComponent } from './components/home-diary/home-diary.component';
 import { RegisterDiaryComponent } from './components/register-diary/register-diary.component';
 import { CalendarDiaryComponent } from './components/calendar-diary/calendar-diary.component';
-import { RegisterDetailComponent } from './components/register-detail/register-detail.component';
+import { RegisterEditComponent } from './components/register-edit/register-edit.component';
 
 const routes: Routes = [
   {
@@ -19,8 +19,13 @@ const routes: Routes = [
     component: CalendarDiaryComponent,
   },
   {
-    path: 'detail',
-    component: RegisterDetailComponent,
+    path: 'edit/:id',
+    component: RegisterEditComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 

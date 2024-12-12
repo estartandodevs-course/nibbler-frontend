@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,14 +10,6 @@ export class ButtonComponent {
   @Input() isDisabled: boolean = false;
   @Input() width: string = 'auto';
   @Input() height: string = 'auto';
-  @Input() router: string = '';
+  @Input() router: string | string[] = '';
   @Input() type: string = 'submit';
-
-  @Output() clicked = new EventEmitter<void>();
-
-  onClick() {
-    if (!this.router && !this.isDisabled) {
-      this.clicked.emit();
-    }
-  }
 }
