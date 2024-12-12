@@ -122,4 +122,14 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="showPopup" class="popup-container">
+    <div class="popup-content">
+      <p>Parabéns por concluir mais um ciclo de foco! Agora é hora de cuidar de você!</p>
+      <div class="popup-buttons">
+        <button class="self-care-button" (click)="navigateToSelfCare()">Sessão auto-cuidado</button>
+        <button class="close-button" (click)="closePopup()">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
