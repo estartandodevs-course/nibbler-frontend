@@ -1,0 +1,65 @@
+@import '../../../styles/styles.scss';
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: $bg-color-alternative-2;
+}
+
+.trees {
+  width: 100%;
+  height: 800px; //800 ou 900?
+  position: absolute;
+  bottom: 130px; //200
+
+  background-position: left 62% center; // 1- só center 2- (left 55% center ou 62%)
+  background-repeat: repeat-x;
+  background-image: url('../../../assets/imgHome/trees.png');
+}
+
+.grass {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  bottom: 150px; //1 - 250px
+
+  z-index: 3;
+  background-image: url('../../../assets/imgHome/grass.png');
+
+  &.left {
+    background-position: -100px 0;
+  }
+
+  &.right {
+    background-position: 100px 0;
+  }
+}
+
+.ground {
+  width: 100%;
+  height: 150px; //1- 250px
+  position: absolute;
+  bottom: 0;
+
+  background: linear-gradient(to bottom, #ebdbc6, #e2d5c2, #cbbfae, #c8b9a3, #a8977f, #766a59);
+}
+
+.nilo-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 140px;
+  margin-right: 240px;
+
+  .img-nilo {
+    width: 238px;
+    height: 412px;
+    position: relative;
+    z-index: 10;
+  }
+}

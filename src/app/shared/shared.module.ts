@@ -11,6 +11,6 @@ import { MatStepperModule } from '@angular/material/stepper';
 @NgModule({
   declarations: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, SpeechBubbleComponent, InputComponent],
   imports: [CommonModule, RouterModule, MatStepperModule],
-  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, RouterModule, InputComponent],
+  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, SpeechBubbleComponent, RouterModule, InputComponent],
 })
 export class SharedModule {}

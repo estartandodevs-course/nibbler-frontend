@@ -30,6 +30,9 @@ section {
     gap: 36px;
 
     .emotion-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       background-color: $bg-popup-error;
       padding: $padding-large;
       border: 1px solid $border-popup-error;
@@ -38,6 +41,7 @@ section {
 
       > span {
         font-size: 22px;
+        display: block;
       }
       ul {
         display: inline-flex;
