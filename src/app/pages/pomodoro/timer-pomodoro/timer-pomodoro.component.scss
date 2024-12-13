@@ -6,22 +6,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $tertiary-color-pomodoro;
   font-family: $primary-font, sans-serif;
   height: 100vh;
-  width: 1404px;
+  width: 100%;
 
-  &.focus {
+  &::after {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    // background-color: red;
+  }
+
+  &.focus::after {
     background-color: $tertiary-color-pomodoro;
   }
 
-  &.break {
+  &.break::after {
     background-color: $primary-color-100;
   }
 
-  &.pause {
+  &.pause::after {
     background-color: $bg-color-alternative-1;
   }
+
+
+
+
+  // &::after.focus {
+  //   background-color: $tertiary-color-pomodoro;
+  // }
+
+  // &::after.break {
+  //   background-color: $primary-color-100;
+  // }
+
+  // &::after.pause {
+  //   background-color: $bg-color-alternative-1;
+  // }
 
   .pomodoro-header {
     position: absolute;

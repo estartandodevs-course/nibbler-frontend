@@ -14,5 +14,9 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    app-timer-pomodoro {
+      width: 100%;
+    }
   }
 }
