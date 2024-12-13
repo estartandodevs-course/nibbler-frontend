@@ -211,7 +211,9 @@
             </button>
           </div>
         </form>
-        <app-card-popup [title]="'Sucesso'" *ngIf="isConfirmed"></app-card-popup>
+        <app-card-popup [title]="'Sucesso'" *ngIf="isConfirmed"
+          [imageMoodNilo]="'../../../assets/iconsPopup/nilo-perfil-happy.png'" [routeButton1]="'/home'"
+          [message]="'Sua conta foi criada com sucesso'" [statusButton1]="'Continuar'"></app-card-popup>
       </mat-step>
     </mat-horizontal-stepper>
   </div>
