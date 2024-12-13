@@ -1,35 +1,82 @@
 <div [ngClass]="{ menu: true, 'menu-open': isOpen }">
   <div class="header-menu">
     <div class="container-logo">
-      <img src="../../../../assets/icons/nibller2-logo.svg" alt="logo nibller" />
+      <img src="assets/icons/nibller2-logo.svg" alt="logo nibller" />
       <h1 class="title" *ngIf="isOpen">Nibbler</h1>
     </div>
     <button (click)="toggleMenu()" class="btn-menu">
       <img
         class="icon"
         [ngClass]="{ active: isOpen }"
-        src="../../../../assets/iconsFeel/chevron-right-circle-svgrepo-com.svg"
+        src="assets/iconsFeel/chevron-right-circle-svgrepo-com.svg"
         alt="seta abrir e fechar" />
     </button>
   </div>
   <ul class="side-nav">
-    <li class="side-nav-item">
-      <a routerLink="agenda" class="side-nav-link">
-        <img class="side-nav-link-icon" src="../../../../assets/icons/book-open-svgrepo-com 1.svg" alt="icone de agenda" />
-        <span class="side-nav-link-text" *ngIf="isOpen">Agenda</span>
-      </a>
-    </li>
-    <li class="side-nav-item">
-      <a routerLink="pomodoro" class="side-nav-link">
-        <img class="side-nav-link-icon" src="../../../../assets/icons/timer-svgrepo-com.svg" alt="icone do pomodoro" />
-        <span class="side-nav-link-text" *ngIf="isOpen">Pomodoro</span>
-      </a>
-    </li>
-    <li class="side-nav-item">
-      <a routerLink="diario" class="side-nav-link">
-        <img class="side-nav-link-icon" src="../../../../assets/icons/emoji-happy-svgrepo-com.svg" alt="icone do diario" />
-        <span class="side-nav-link-text" *ngIf="isOpen">Meu Diário</span>
-      </a>
-    </li>
+    <div>
+      <li class="side-nav-item">
+        <a routerLink="agenda" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/book-open-svgrepo-com 1.svg" alt="icone de agenda" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Agenda</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="pomodoro" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/timer-svgrepo-com.svg" alt="icone do pomodoro" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Pomodoro</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/emoji-happy-svgrepo-com.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Meu Diário</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/edit-svgrepo-com 1.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Minhas anotações</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/cols-row-svgrepo-com 1.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Dashboard</span>
+        </a>
+      </li>
+    </div>
+    <div>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/bell-svgrepo-com 1.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Notifications</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/cog-svgrepo-com 1.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Configurações</span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="diario" class="side-nav-link">
+          <img class="side-nav-link-icon" src="assets/icons/alert-triangle-svgrepo-com 1.svg" alt="icone do diario" />
+          <span class="side-nav-link-text" *ngIf="isOpen">Suporte</span>
+        </a>
+      </li>
+    </div>
   </ul>
+  <div class="user">
+    <div>
+      <div class="user-img">
+        <img src="assets/imgUser/Big Shoes Avatar.png" alt="foto do usuario" />
+      </div>
+      <span class="side-nav-link-text" *ngIf="isOpen">Lucas</span>
+    </div>
+    <img
+      src="assets/icons/chevron-right-circle-svgrepo-com.svg"
+      alt="icone de seta para a direita"
+      *ngIf="isOpen"
+      class="icon-arrow-right" />
+  </div>
 </div>
