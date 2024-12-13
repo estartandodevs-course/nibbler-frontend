@@ -9,8 +9,8 @@ import { IEmotionApiResponse } from '../models/emotionInterface';
 })
 export class CalendarRestService {
   constructor(private _http: HttpClient) {}
-  private url = 'http://localhost:5030/api/reflexoes/usuario/3a770a96-302e-494e-773b-08dd1a60a9c9';
-  private emotionsUrl = 'http://localhost:5030/api/emocoes';
+  private url = 'https://nibbler.estartandodevs.com.br/api/reflexoes/usuario/8d11e3c0-6c6c-4d56-e623-08dd1a327e31';
+  private emotionsUrl = 'https://nibbler.estartandodevs.com.br/api/emocoes';
 
   getAllRegisters(): Observable<IApiResponseReflexoes> {
     return this._http.get<IApiResponseReflexoes>(this.url);

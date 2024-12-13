@@ -24,18 +24,13 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'home',
-    pathMatch: 'full',
-    redirectTo: 'home',
-  },
-  {
     path: '',
     component: LayoutComponent,
     children: PagesRouting,
   },
   {
     path: '**',
-    pathMatch: 'prefix',
+    pathMatch: 'full',
     redirectTo: 'home',
   },
 ];

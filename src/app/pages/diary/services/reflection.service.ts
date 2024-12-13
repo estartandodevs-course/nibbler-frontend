@@ -8,7 +8,7 @@ import { IApiResponseReflexao } from '../models/calendarInterface';
   providedIn: 'root',
 })
 export class ReflectionService {
-  private readonly apiUrl = 'http://localhost:5030/api/reflexoes';
+  private readonly apiUrl = 'https://nibbler.estartandodevs.com.br/api/reflexoes';
 
   constructor(private http: HttpClient) {}
 

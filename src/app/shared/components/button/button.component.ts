@@ -10,6 +10,6 @@ export class ButtonComponent {
   @Input() isDisabled: boolean = false;
   @Input() width: string = 'auto';
   @Input() height: string = 'auto';
-  @Input() router: string | string[] = '';
+  @Input() router: string | string[] = '.';
   @Input() type: string = 'submit';
 }

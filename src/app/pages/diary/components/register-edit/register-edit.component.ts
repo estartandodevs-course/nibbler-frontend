@@ -32,6 +32,17 @@ export class RegisterEditComponent implements OnInit {
     this.loadReflection();
   }
 
+  isOpen = false;
+
+  toggleMenu(): void {
+    const backdrop = document.querySelector('.backdrop');
+    this.isOpen = !this.isOpen;
+
+    if (backdrop) {
+      backdrop.classList.toggle('openBackdrop');
+    }
+  }
+
   loadEmotions(): void {
     this.emotionService.getEmotions().subscribe({
       next: (response) => {
@@ -44,6 +55,15 @@ export class RegisterEditComponent implements OnInit {
       error: (error) => console.error('Erro ao buscar emoções:', error),
     });
   }
+
+  emotionTranslations: { [key: string]: string } = {
+    happy: 'Feliz',
+    good: 'Bem',
+    neutral: 'Neutro',
+    anxious: 'Ansioso',
+    sad: 'Triste',
+    horrible: 'Horrível',
+  };
 
   loadReflection(): void {
     this.idReflection = this.route.snapshot.paramMap.get('id'); // Obtém o ID da URL

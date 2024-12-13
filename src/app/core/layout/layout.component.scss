@@ -3,7 +3,7 @@ main {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: $padding-ultra-large;
+  padding: $padding-ultra-large 0;
 
   header {
     height: 100%;
@@ -14,5 +14,12 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 8px 0;
+
+    app-timer-pomodoro {
+      width: 100%;
+    }
   }
 }
