@@ -31,6 +31,17 @@
         [(ngModel)]="reflection.reflectionText">
       </textarea>
     </div>
-    <button type="submit" class="primary">Register</button>
+    <button type="submit" class="primary" (click)="toggleMenu()">Register</button>
   </form>
+  <div class="backdrop"></div>
+  <div class="card-popup" *ngIf="isOpen">
+    <div>
+      <img src="assets/iconsPopup/nilo-perfil-happy.png" alt="" />
+    </div>
+    <div>
+      <h2>Seu registro foi salvo com sucesso!</h2>
+      <p>Cada reflexão é um passo a mais no seu autocuidado.</p>
+    </div>
+    <app-button (click)="toggleMenu()">Finalizar</app-button>
+  </div>
 </section>

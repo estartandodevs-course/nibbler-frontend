@@ -7,22 +7,17 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent,
+    path: '',
+    component: WelcomeComponent,
   },
   {
-    path: 'home',
-    pathMatch: 'full',
-    redirectTo: 'home',
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '',
     component: LayoutComponent,
     children: PagesRouting,
-  },
-  {
-    path: '',
-    component: WelcomeComponent,
   },
   {
     path: '**',

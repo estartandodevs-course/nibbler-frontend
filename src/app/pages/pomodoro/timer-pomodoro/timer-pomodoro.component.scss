@@ -18,7 +18,6 @@
     left: 0;
     position: absolute;
     z-index: -1;
-    // background-color: red;
   }
 
   &.focus::after {
@@ -32,21 +31,6 @@
   &.pause::after {
     background-color: $bg-color-alternative-1;
   }
-
-
-
-
-  // &::after.focus {
-  //   background-color: $tertiary-color-pomodoro;
-  // }
-
-  // &::after.break {
-  //   background-color: $primary-color-100;
-  // }
-
-  // &::after.pause {
-  //   background-color: $bg-color-alternative-1;
-  // }
 
   .pomodoro-header {
     position: absolute;

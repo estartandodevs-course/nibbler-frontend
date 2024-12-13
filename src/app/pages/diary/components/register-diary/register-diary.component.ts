@@ -15,7 +15,7 @@ export class RegisterDiaryComponent implements OnInit {
     emotion: '',
     reflectionText: '',
   };
-  userId = '3a770a96-302e-494e-773b-08dd1a60a9c9';
+  userId = '8d11e3c0-6c6c-4d56-e623-08dd1a327e31';
 
   constructor(
     private emotionService: CalendarRestService,
@@ -24,6 +24,17 @@ export class RegisterDiaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadEmotions();
+  }
+
+  isOpen = false;
+
+  toggleMenu(): void {
+    const backdrop = document.querySelector('.backdrop');
+    this.isOpen = !this.isOpen;
+
+    if (backdrop) {
+      backdrop.classList.toggle('openBackdrop');
+    }
   }
 
   loadEmotions(): void {
@@ -63,6 +74,8 @@ export class RegisterDiaryComponent implements OnInit {
     this.reflectionService.addReflexao(payload).subscribe({
       next: (response) => {
         console.log('Reflexão registrada com sucesso!', response);
+        this.reflection.emotion = '';
+        this.reflection.reflectionText = '';
       },
       error: (error) => console.error('Erro ao registrar a reflexão:', error),
     });

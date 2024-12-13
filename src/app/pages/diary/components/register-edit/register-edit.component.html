@@ -7,6 +7,7 @@
       Meus Registros
     </button>
   </header>
+  <!-- <form #diaryForm="ngForm"> -->
   <form #diaryForm="ngForm" (ngSubmit)="submitReflection()">
     <div class="emotion-selector">
       <span>Hoje eu estou me sentindo...</span>
@@ -31,6 +32,17 @@
         [(ngModel)]="reflection.reflectionText">
       </textarea>
     </div>
-    <button type="submit" class="primary">Register</button>
+    <button type="submit" class="primary" (click)="toggleMenu()">Salvar Atualização</button>
   </form>
+  <div class="backdrop"></div>
+  <div class="card-popup" *ngIf="isOpen">
+    <div>
+      <img src="assets/iconsPopup/nilo-perfil-happy.png" alt="" />
+    </div>
+    <div>
+      <h2>Atualização salva com sucesso!</h2>
+      <p>Cada reflexão é um passo a mais no seu autocuidado.</p>
+    </div>
+    <app-button (click)="toggleMenu()">Continuar</app-button>
+  </div>
 </section>

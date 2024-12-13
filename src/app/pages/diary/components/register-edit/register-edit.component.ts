@@ -32,6 +32,17 @@ export class RegisterEditComponent implements OnInit {
     this.loadReflection();
   }
 
+  isOpen = false;
+
+  toggleMenu(): void {
+    const backdrop = document.querySelector('.backdrop');
+    this.isOpen = !this.isOpen;
+
+    if (backdrop) {
+      backdrop.classList.toggle('openBackdrop');
+    }
+  }
+
   loadEmotions(): void {
     this.emotionService.getEmotions().subscribe({
       next: (response) => {
