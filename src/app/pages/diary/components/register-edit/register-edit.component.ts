@@ -45,6 +45,15 @@ export class RegisterEditComponent implements OnInit {
     });
   }
 
+  emotionTranslations: { [key: string]: string } = {
+    happy: 'Feliz',
+    good: 'Bem',
+    neutral: 'Neutro',
+    anxious: 'Ansioso',
+    sad: 'Triste',
+    horrible: 'Horrível',
+  };
+
   loadReflection(): void {
     this.idReflection = this.route.snapshot.paramMap.get('id'); // Obtém o ID da URL
     if (!this.userId) {

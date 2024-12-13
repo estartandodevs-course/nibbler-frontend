@@ -39,6 +39,15 @@ export class RegisterDiaryComponent implements OnInit {
     });
   }
 
+  emotionTranslations: { [key: string]: string } = {
+    happy: 'Feliz',
+    good: 'Bem',
+    neutral: 'Neutro',
+    anxious: 'Ansioso',
+    sad: 'Triste',
+    horrible: 'Horrível',
+  };
+
   submitReflection(): void {
     if (!this.reflection.emotion || !this.reflection.reflectionText) {
       console.error('Todos os campos são obrigatórios.');

@@ -1,6 +1,6 @@
 <section>
   <header>
-    <span>Teste</span>
+    <span>Registro Hoje</span>
 
     <button routerLink="/diario/calendar">
       <img src="assets/icons/weekly-calendar-daily-calendar 1.svg" alt="" />
@@ -17,7 +17,7 @@
             <div class="img-content">
               <img [src]="'assets/iconsFeel/icon-feel-' + emotion.nome + '.png'" alt="Emoção" />
             </div>
-            <span>{{ emotion.nome | titlecase }}</span>
+            <span>{{ emotionTranslations[emotion.nome] || emotion.nome }}</span>
           </label>
         </li>
       </ul>

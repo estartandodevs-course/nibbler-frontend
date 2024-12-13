@@ -7,10 +7,6 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: WelcomeComponent,
-  },
-  {
     path: 'login',
     component: LoginComponent,
   },
@@ -25,8 +21,12 @@ const routes: Routes = [
     children: PagesRouting,
   },
   {
+    path: '',
+    component: WelcomeComponent,
+  },
+  {
     path: '**',
-    pathMatch: 'prefix',
+    pathMatch: 'full',
     redirectTo: 'home',
   },
 ];
