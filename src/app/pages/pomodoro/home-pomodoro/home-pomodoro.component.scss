@@ -1,5 +1,4 @@
-@import '../../../../styles/themes/colors';
-@import '../../../../styles/base/fonts';
+@import '../../../../styles/styles.scss';
 
 .pomodoro-container {
   display: flex;
@@ -7,8 +6,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
-  /* background-color: #ffeae5; */
   height: 100vh;
   width: 100%;
 
@@ -39,11 +36,8 @@
         border-color: $bg-color-alternative-2 transparent transparent transparent;
       }
       p {
-        font-family: Montserrat;
+        @include body-font(600);
         font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 26px;
       }
     }
     img {

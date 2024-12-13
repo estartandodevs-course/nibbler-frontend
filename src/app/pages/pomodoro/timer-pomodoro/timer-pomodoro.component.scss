@@ -1,5 +1,4 @@
-@import '../../../../styles/themes/colors';
-@import '../../../../styles/base/fonts';
+@import '../../../../styles/styles.scss';
 
 .pomodoro-container {
   display: flex;
@@ -288,7 +287,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $primary-font;
+
+
+    h2 {
+      @include headings-font(26px, 38px);
+    }
 
     .close-button {
       background: none;
