@@ -5,9 +5,13 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card-popup.component.scss',
 })
 export class CardPopupComponent {
-  imageMoodNilo = 'assets/iconsPopup/nilo-perfil-sad.png';
+  @Input() imageMoodNilo: string = 'assets/iconsPopup/nilo-perfil-sad.png';
   @Input() title: string = 'Ocorreu um erro no sistema';
-  message: string = 'Por favor, tente novamente mais tarde.';
-  statusButton: string = 'Finalizado';
-  // children:
+  @Input() message: string = 'Por favor, tente novamente mais tarde.';
+  @Input() statusButton1: string = 'Finalizado';
+  @Input() statusButton2: string = 'Finalizado';
+  @Input() backgroundColor: 'status-success' | 'status-error-neutral' = 'status-success';
+  @Input() routeButton1: string = '';
+  @Input() routeButton2: string = '';
+  @Input() showButton2: boolean = false;
 }

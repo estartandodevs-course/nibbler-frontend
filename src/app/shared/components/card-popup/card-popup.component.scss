@@ -7,16 +7,9 @@
   box-sizing: border-box;
 }
 
-// visualizar centralizado
-body {
-  display: grid;
-  place-items: center;
-}
-
 .card-popup {
   width: 420px;
   height: 470px;
-  background-color: $bg-popup-error;
 
   display: flex;
   flex-direction: column;
@@ -48,4 +41,14 @@ body {
     line-height: 26px;
     margin-top: 10px;
   }
+}
+
+.status-error-neutral {
+  background-color: $bg-popup-error;
+  border-color: $border-popup-error;
+}
+
+.status-success {
+  background-color: $bg-popup-success;
+  border-color: $border-popup-success;
 }
