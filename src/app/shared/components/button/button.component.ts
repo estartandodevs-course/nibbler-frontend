@@ -10,7 +10,6 @@ export class ButtonComponent {
   @Input() isDisabled: boolean = false;
   @Input() width: string = 'auto';
   @Input() height: string = 'auto';
-  @Input() router?: string;
-  @Input() type: string = 'button';
-  @Input() matStepperNext: boolean = false;
+  @Input() router: string | string[] = '';
+  @Input() type: string = 'submit';
 }
