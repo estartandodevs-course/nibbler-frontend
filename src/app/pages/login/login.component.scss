@@ -34,7 +34,6 @@
     .hearder {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: -20px;
     }
 
     .content-login {
@@ -96,6 +95,7 @@
         }
       }
       h3 {
+        cursor: pointer;
         font-family: $secondary-font;
         font-weight: 900;
         font-size: 16px;
