@@ -28,6 +28,13 @@
   color: #69563a;
 }
 
+@mixin display($f-direct, $just-cont, $alin-itens) {
+  display: flex;
+  flex-direction: $f-direct;
+  justify-content: $just-cont;
+  align-items: $alin-itens;
+}
+
 @mixin breakpoint($point) {
   @if $point == mobile {
     @media (min-width: 375px) {

@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="hearder">
+  <div class="hearder" routerLink="/login">
     <img src="../../../assets/iconsFeel/nibller 2-logo.png" alt="logo nillo" />
   </div>
 
@@ -46,20 +46,6 @@
                 alt="Ícone de mostrar ou ocultar senha" />
             </button>
           </div>
-
-          <!-- <app-input [type]="'text'" [title]="'Nome'" formControlName="nome"></app-input> -->
-          <!-- <app-input [type]="'date'" [title]="'Data de nascimento'" formControlName="dataNascimento"></app-input>
-          <app-input [type]="'email'" [title]="'E-mail'" formControlName="email"></app-input>
-
-          <app-input [type]="visible ? 'password' : 'text'" [type]="'password'" [title]="'Senha'"
-            formControlName="senha">
-            <button type="button" class="eyeicon" (click)="viewpass()" aria-label="Mostrar ou ocultar senha">
-              <img
-                [src]="visible ? '../../../../assets/icons/eye-off-svgrepo-com.svg' : '../../../../assets/icons/eye-svgrepo-com 1.svg'"
-                alt="Ícone de mostrar ou ocultar senha" />
-            </button>
-          </app-input> -->
-
           <div class="content-button">
             <button class="primary" mat-button matStepperNext type="button">Próximo</button>
             <app-button [width]="'100%'" [variant]="'secondary'" router="/">Voltar</app-button>
@@ -77,7 +63,6 @@
 
           <fieldset>
             <div class="inputs">
-              <!-- <app-input [type]="'radio'" formControlName="diagnostico" value="sim" [name]="'option_one'"></app-input> -->
               <input class="field" type="radio" value="sim" id="option_one" formControlName="diagnostico" />
               <label for="option_one">Sim, tenho diagnóstico.</label>
             </div>
@@ -85,15 +70,12 @@
           <fieldset>
             <div class="inputs">
               <input class="field" type="radio" value="nao" id="option_two" formControlName="diagnostico" />
-              <!-- <app-input [type]="'radio'" formControlName="diagnostico" value="suspeito"
-                [name]="'option_Two'"></app-input> -->
               <label for="option_two">Suspeito que tenho, mas ainda não fui diagnosticado.</label>
             </div>
           </fieldset>
           <fieldset>
             <div class="inputs">
               <input class="field" type="radio" value="talvez" id="option_three" formControlName="diagnostico" />
-              <!-- <app-input [type]="'radio'" formControlName="diagnostico" value="nao" [name]="'option_Three'"></app-input> -->
               <label for="option_three">Não, mas quero melhorar minha organização e produtividade.</label>
             </div>
           </fieldset>
@@ -151,7 +133,7 @@
       <mat-step [stepControl]="form">
         <form>
           <div class="popup">
-            <p>Quais são seus principais objetivos ao utilizar o NIbbler?*</p>
+            <p>Quais são seus principais objetivos ao utilizar o Nibbler?*</p>
             <img src="../../../assets/iconsPopup/nilo perfil.png" alt="" />
           </div>
 
