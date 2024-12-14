@@ -1,9 +1,7 @@
-<body>
-  <section class="card-popup">
-    <img [src]="imageMoodNilo" alt="Imagem do humor do mascote esquilo." />
-    <h1>{{ title }}</h1>
-    <p>{{ message }}</p>
-    <app-button> {{ statusButton }} </app-button>
-    <app-button [variant]="'secondary'"> {{ statusButton }} </app-button>
-  </section>
-</body>
+<section class="card-popup" [ngClass]="backgroundColor">
+  <img [src]="imageMoodNilo" alt="Imagem do humor do mascote esquilo." />
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <app-button [router]="routeButton1"> {{ statusButton1 }} </app-button>
+  <app-button *ngIf="showButton2" [variant]="'secondary'" [router]="routeButton2"> {{ statusButton2 }} </app-button>
+</section>

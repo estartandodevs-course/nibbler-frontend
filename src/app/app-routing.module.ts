@@ -3,16 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesRouting } from './pages/routing';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent,
+    path: '',
+    component: WelcomeComponent,
+  },
+  {
+    path: 'cadastro',
+    component: RegistrationComponent,
   },
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
+    component: WelcomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '',
@@ -21,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    pathMatch: 'prefix',
+    pathMatch: 'full',
     redirectTo: 'home',
   },
 ];

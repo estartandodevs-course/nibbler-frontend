@@ -1,0 +1,202 @@
+<div class="main">
+  <div class="hearder" routerLink="/login">
+    <img src="../../../assets/iconsFeel/nibller 2-logo.png" alt="logo nillo" />
+  </div>
+
+  <div class="content-cadastro">
+    <mat-horizontal-stepper>
+      <!-- Step 1 -->
+      <mat-step [stepControl]="form">
+        <form [formGroup]="form">
+          <div class="popup">
+            <p>Vamos começar criando uma conta ?</p>
+            <img src="../../../assets/iconsPopup/nilo perfil.png" alt="" />
+          </div>
+          <div class="field">
+            <input type="text" formControlName="nome" placeholder="Digite seu nome..." id="nome" />
+            <label for="nome">Nome</label>
+          </div>
+          <div class="field">
+            <input
+              type="date"
+              formControlName="dataDeNascimento"
+              placeholder="Digite sua data de nascimento..."
+              id="dataDeNascimento"
+              required />
+            <label for="dataDeNascimento">Data de nascimento</label>
+          </div>
+          <div class="field">
+            <input type="email" formControlName="email" placeholder="Digite seu email..." id="email" required />
+            <label for="email">E-mail</label>
+          </div>
+          <div class="field">
+            <input
+              [type]="visible ? 'password' : 'text'"
+              type="password"
+              formControlName="senha"
+              placeholder="Digite sua senha..."
+              id="senha"
+              required />
+            <label for="senha">Senha</label>
+            <button type="button" class="eyeicon" (click)="viewpass()" aria-label="Mostrar ou ocultar senha">
+              <img
+                [src]="
+                  visible ? '../../../../assets/icons/eye-off-svgrepo-com.svg' : '../../../../assets/icons/eye-svgrepo-com 1.svg'
+                "
+                alt="Ícone de mostrar ou ocultar senha" />
+            </button>
+          </div>
+          <div class="content-button">
+            <button class="primary" mat-button matStepperNext type="button">Próximo</button>
+            <app-button [width]="'100%'" [variant]="'secondary'" router="/">Voltar</app-button>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Step 2 -->
+      <mat-step [stepControl]="form">
+        <form [formGroup]="form">
+          <div class="popup">
+            <p>Você possui diagnóstico de TDAH?</p>
+            <img src="../../../assets/iconsPopup/nilo perfil.png" alt="" />
+          </div>
+
+          <fieldset>
+            <div class="inputs">
+              <input class="field" type="radio" value="sim" id="option_one" formControlName="diagnostico" />
+              <label for="option_one">Sim, tenho diagnóstico.</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <input class="field" type="radio" value="nao" id="option_two" formControlName="diagnostico" />
+              <label for="option_two">Suspeito que tenho, mas ainda não fui diagnosticado.</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <input class="field" type="radio" value="talvez" id="option_three" formControlName="diagnostico" />
+              <label for="option_three">Não, mas quero melhorar minha organização e produtividade.</label>
+            </div>
+          </fieldset>
+
+          <div class="content-button">
+            <button class="primary" mat-button matStepperNext type="button">Próximo</button>
+            <button class="secondary" mat-button matStepperPrevious type="button">Voltar</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="form">
+        <div class="popup">
+          <p>Quais são seus principais desafios?*</p>
+          <img src="../../../assets/iconsPopup/nilo perfil.png" alt="" />
+        </div>
+        <form>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [required]="true" [name]="'option_Four'"> </app-input>
+              <label for="option_Four">Procrastinação</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [required]="true" [name]="'option_Five'"> </app-input>
+              <label for="option_Five">Dificuldade em manter o foco</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [required]="true" [name]="'option_six'"> </app-input>
+              <label for="option_six">Sobrecarga de Tarefas</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [required]="true" [name]="'option_Seven'"> </app-input>
+              <label for="option_Seven">Organização e Planejamento</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [required]="true" [name]="'option_Eight'"> </app-input>
+              <label for="option_Eight">Autocuidado e Saúde Emocional</label>
+            </div>
+          </fieldset>
+        </form>
+        <div class="content-button">
+          <button class="primary" mat-button matStepperNext type="button">Próximo</button>
+          <button class="secondary" matStepperPrevious type="button">Voltar</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="form">
+        <form>
+          <div class="popup">
+            <p>Quais são seus principais objetivos ao utilizar o Nibbler?*</p>
+            <img src="../../../assets/iconsPopup/nilo perfil.png" alt="" />
+          </div>
+
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [name]="'option_nine'"></app-input>
+              <label for="option_nine">Gerenciamento de Tarefas</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [name]="'option_ten'"></app-input>
+              <label for="option_ten">Monitoramento de Emoções</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [name]="'option_eleven'"></app-input>
+              <label for="option_eleven">Pomodoro e Foco</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [name]="'option_twelve'"></app-input>
+              <label for="option_twelve">Conquistas e Progresso</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="inputs">
+              <app-input [type]="'checkbox'" [name]="'option_thirteen'"></app-input>
+              <label for="option_thirteen">Autocuidado e Saúde</label>
+            </div>
+          </fieldset>
+
+          <div class="content-button">
+            <button class="primary" mat-button matStepperNext type="button">Próximo</button>
+            <button class="secondary" mat-button matStepperPrevious type="button">Voltar</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isConfirmed">
+          <div class="popup-complete">
+            <p>Perfeito! Com essas informações posso ajudá-lo melhor na sua jornada de organização e produtividade!</p>
+            <img src="../../../assets/imgBg/nilo-home.png" alt="" />
+          </div>
+
+          <div class="content-button">
+            <button class="primary" mat-button type="submit" [disabled]="load" (click)="onSubmit()">
+              <span *ngIf="!load">Enviar</span>
+              <span *ngIf="load">Carregando...</span>
+            </button>
+          </div>
+        </form>
+        <app-card-popup
+          [title]="'Sucesso'"
+          *ngIf="isConfirmed"
+          [imageMoodNilo]="'../../../assets/iconsPopup/nilo-perfil-happy.png'"
+          [routeButton1]="'/home'"
+          [message]="'Sua conta foi criada com sucesso'"
+          [statusButton1]="'Continuar'"></app-card-popup>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>

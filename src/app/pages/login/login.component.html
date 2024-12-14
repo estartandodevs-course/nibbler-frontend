@@ -41,7 +41,7 @@
           </button>
         </app-input>
 
-        <button type="submit" class="bnt">Enviar</button>
+        <button class="bnt" routerLink="/home">Enviar</button>
       </form>
 
       <div class="content-platforms">
@@ -55,7 +55,7 @@
           <img src="../../../assets/iconsFeel/facebook.svg" alt="icone facebook" />
         </div>
       </div>
-      <h3>Ainda não tem uma conta? Cadastre</h3>
+      <h3 [routerLink]="['/cadastro']">Ainda não tem uma conta? Cadastre</h3>
     </div>
   </div>
 </div>

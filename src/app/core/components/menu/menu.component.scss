@@ -16,11 +16,12 @@ $menu-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.25);
   padding: $menu-padding;
   margin: $menu-margin;
   position: relative;
+  z-index: 10;
   border-radius: $menu-border-radius;
   transition: $menu-transition;
   background: $menu-background;
   box-shadow: $menu-box-shadow;
-  margin-right: 32px;
+  margin: 0 72px;
 
   .header-menu {
     display: flex;
@@ -63,8 +64,8 @@ $menu-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     list-style: none;
     max-height: 695px;
-    align-items: center;
     flex-direction: column;
+    gap: 20px;
 
     &:hover {
       overflow-y: auto;
@@ -105,6 +106,39 @@ $menu-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.25);
           filter: invert(7%) sepia(51%) saturate(423%) hue-rotate(352deg) brightness(92%) contrast(91%);
         }
       }
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    margin-top: 22px;
+    cursor: pointer;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      .user-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .side-nav-link-text {
+        margin-left: 8px;
+        font-weight: 600;
+        color: $neutral-color-800;
+        font-family: $secondary-font;
+      }
+    }
+
+    .icon-arrow-right {
+      width: 20px;
+      height: 20px;
     }
   }
 }

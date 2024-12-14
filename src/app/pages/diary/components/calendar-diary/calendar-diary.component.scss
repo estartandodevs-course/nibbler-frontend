@@ -1,6 +1,192 @@
-.calendar-container {
+@import '../../../../../styles/styles.scss';
+.calendar-home {
   display: flex;
   justify-content: center;
-  padding: 20px;
-  width: 1000px;
+  align-items: flex-start;
+  gap: 62px;
+  position: relative;
+
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: $padding-large;
+    border: 4px solid $neutral-color-400;
+    border-radius: $border-radius-medium;
+    @include headings-font(26px, 38px);
+
+    .calendar-header {
+      display: inline-flex;
+      justify-content: space-between;
+      height: 33px;
+      padding: 0 33px;
+
+      .btn-today {
+        @include headings-font(26px, 38px);
+        color: #202224;
+        align-self: center;
+      }
+
+      .chance-month {
+        display: inline-flex;
+        align-items: center;
+
+        p {
+          margin: 0 12px;
+        }
+      }
+
+      .chance-view {
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        border: 2px solid $secondary-color-100;
+        border-radius: $border-radius-large;
+        overflow: hidden;
+        input {
+          display: none;
+        }
+
+        label {
+          padding: 6px $padding-medium;
+          color: $secondary-color-500;
+          cursor: pointer;
+        }
+
+        input[type='radio']:checked + label {
+          background-color: $secondary-color-100;
+          color: $neutral-color-900;
+        }
+      }
+    }
+
+    mwl-calendar-month-view {
+      display: block;
+      background-color: #f4f4f4;
+      width: 800px;
+
+      .cal-month-view {
+        background-color: transparent;
+
+        .cal-header {
+          padding: $padding-small-medium;
+          background-color: $neutral-color-200;
+          border-radius: $border-radius-small $border-radius-small 0 0;
+        }
+
+        .cal-day-cell.cal-today {
+          background-color: #c7ffc4;
+          .cal-day-number {
+            font-size: 28px;
+            font-weight: 600;
+          }
+        }
+        .cal-day-number {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .event-modal {
+      position: absolute;
+      z-index: 20;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      transform: translate(-50%, -50%);
+      background-color: #f4f4f4;
+      padding: $padding-large;
+      border: 4px solid $neutral-color-400;
+      border-radius: $border-radius-medium;
+
+      h2 {
+        font-size: 27px;
+      }
+      .modal-info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+
+        .emotion-selector {
+          background-color: $bg-popup-error;
+          padding: $padding-large;
+          border: 1px solid $border-popup-error;
+          border-radius: $border-radius-large;
+          text-align: center;
+
+          > span {
+            font-size: 22px;
+          }
+          ul {
+            display: inline-flex;
+            gap: 16px;
+
+            li {
+              input {
+                display: none;
+              }
+              .img-content {
+                position: relative;
+
+                img {
+                  width: 100%;
+                  display: block;
+                }
+              }
+
+              .img-content:hover::before,
+              input[type='radio']:checked + label .img-content::before {
+                content: '';
+                position: absolute;
+                height: 120px;
+                width: 120px;
+                top: 2px;
+                left: 4px;
+                right: 0;
+                bottom: 0;
+                box-shadow: inset 1px 1px 0px 14px rgb(0 0 0 / 45%);
+                border-radius: 50%;
+              }
+
+              span {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+
+        .daily-reflections {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: $padding-medium;
+          background-color: $bg-popup-error;
+          padding: $padding-large;
+          border: 1px solid $border-popup-error;
+          border-radius: $border-radius-large;
+
+          span {
+            font-size: 22px;
+          }
+
+          textarea {
+            @include body-font(400);
+            border: none;
+            background-color: transparent;
+            height: 150px;
+            resize: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

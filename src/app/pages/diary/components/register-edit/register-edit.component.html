@@ -1,0 +1,48 @@
+<section>
+  <header>
+    <span>Registro Hoje</span>
+
+    <button routerLink="/diario/calendar">
+      <img src="assets/icons/weekly-calendar-daily-calendar 1.svg" alt="" />
+      Meus Registros
+    </button>
+  </header>
+  <!-- <form #diaryForm="ngForm"> -->
+  <form #diaryForm="ngForm" (ngSubmit)="submitReflection()">
+    <div class="emotion-selector">
+      <span>Hoje eu estou me sentindo...</span>
+      <ul>
+        <li *ngFor="let emotion of emotions">
+          <input type="radio" name="emotion" [id]="emotion.nome" [(ngModel)]="reflection.emotion" [value]="emotion.id" />
+          <label [for]="emotion.nome">
+            <div class="img-content">
+              <img [src]="'assets/iconsFeel/icon-feel-' + emotion.nome + '.png'" alt="Emoção" />
+            </div>
+            <span>{{ emotionTranslations[emotion.nome] || emotion.nome }}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="daily-reflections">
+      <span>Suas Reflexões do Dia</span>
+      <textarea
+        name="reflectionText"
+        id="reflectionText"
+        placeholder="Escreva aqui suas ideias, reflexões ou qualquer coisa que queira lembrar. Este é seu espaço livre para anotações."
+        [(ngModel)]="reflection.reflectionText">
+      </textarea>
+    </div>
+    <button type="submit" class="primary" (click)="toggleMenu()">Salvar Atualização</button>
+  </form>
+  <div class="backdrop"></div>
+  <div class="card-popup" *ngIf="isOpen">
+    <div>
+      <img src="assets/iconsPopup/nilo-perfil-happy.png" alt="" />
+    </div>
+    <div>
+      <h2>Atualização salva com sucesso!</h2>
+      <p>Cada reflexão é um passo a mais no seu autocuidado.</p>
+    </div>
+    <app-button (click)="toggleMenu()">Continuar</app-button>
+  </div>
+</section>

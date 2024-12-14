@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PomodoroComponent } from './pomodoro.component';
+import { HomePomodoroComponent } from './home-pomodoro/home-pomodoro.component';
+import { TimerPomodoroComponent } from './timer-pomodoro/timer-pomodoro.component';
+import { SelfCareComponent } from './self-care/self-care.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PomodoroComponent,
+    component: HomePomodoroComponent,
+  },
+  {
+    path: 'timer',
+    component: TimerPomodoroComponent,
+  },
+  {
+    path: 'self-care',
+    component: SelfCareComponent,
   },
 ];
 

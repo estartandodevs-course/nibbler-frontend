@@ -1,3 +1,61 @@
-<div class="calendar-container">
-  <mwl-calendar-month-view [viewDate]="viewDate" [events]="[]"> </mwl-calendar-month-view>
+<div class="calendar-home">
+  <button routerLink="/diario/register">
+    <img src="../../../../../assets/icons/arrow-left-circle-svgrepo-com.svg" alt="" />
+  </button>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button (click)="goToCurrentMonth()" class="btn-today">Hoje</button>
+      <div class="chance-month">
+        <button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <img src="../../../../../assets/icons/arrow-left-circle-svgrepo-com.svg" alt="" />
+        </button>
+        <!-- <p>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</p> -->
+        <p>{{ viewDate | date: 'MMMM - y' : 'pt-BR' | titlecase }}</p>
+        <button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <img src="../../../../../assets/icons/arrow-right-circle-svgrepo-com.svg" alt="" />
+        </button>
+      </div>
+      <div class="chance-view">
+        <div>
+          <input type="radio" id="month" name="change" checked />
+          <label for="month">Mês</label>
+        </div>
+        <div>
+          <input type="radio" id="week" name="change" />
+          <label for="week">Semana</label>
+        </div>
+      </div>
+    </div>
+    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" (dayClicked)="dayClicked($event.day)" locale="pt-BR">
+    </mwl-calendar-month-view>
+
+    <div *ngIf="activeDayIsOpen" class="event-modal">
+      <h2>Meu registro diário</h2>
+      <div *ngIf="diaryData; else noData" class="modal-info">
+        <div class="emotion-selector">
+          <span>Hoje eu estou me sentindo...</span>
+          <ul>
+            <li>
+              <input type="radio" [id]="diaryData.emocao.nome" [value]="diaryData.emocao.nome" checked disabled />
+              <label [for]="diaryData.emocao.nome">
+                <div class="img-content">
+                  <img [src]="'assets/iconsFeel/icon-feel-' + diaryData.emocao.nome + '.png'" alt="Emoção" />
+                </div>
+                <span>{{ diaryData.emocao.nome | titlecase }}</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="daily-reflections">
+          <span>Suas Reflexões do Dia</span>
+          <textarea name="reflectionText" id="reflectionText" [(ngModel)]="diaryData.conteudo" readonly> </textarea>
+        </div>
+        <app-button variant="primary" type="button" [router]="['/diario/edit', diaryData.reflexaoId]">Editar</app-button>
+      </div>
+      <ng-template #noData>
+        <p>Nenhum dado para este dia.</p>
+      </ng-template>
+      <app-button variant="secondary" type="button" (click)="closeOpenMonthViewDay()" router="/diario/calendar">Sair</app-button>
+    </div>
+  </div>
 </div>

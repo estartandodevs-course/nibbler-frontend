@@ -3,7 +3,17 @@
 
 .field {
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
+  input[type='date'] {
+    -webkit-appearance: none; /* Remove o estilo padrão do Chrome/Safari */
+    -moz-appearance: textfield; /* Remove o estilo padrão do Firefox */
+    appearance: none; /* Remove o estilo padrão para navegadores modernos */
+  }
+
+  input[type='date']::-webkit-inner-spin-button,
+  input[type='date']::-webkit-calendar-picker-indicator {
+    display: none; /* Remove o botão de calendário no Chrome/Safari */
+  }
 }
 
 .field label {
@@ -15,14 +25,14 @@
   pointer-events: none;
   transition: all 0.3s ease;
   top: 0;
-  max-width: 65px;
+  max-width: 155px;
   font-size: 15px;
   background-color: $neutral-bg-light;
 }
 
 .field input {
   width: 100%;
-  max-width: 430px;
+  max-width: 550px;
   height: 56px;
   font-size: 15px;
   color: $neutral-color-700;

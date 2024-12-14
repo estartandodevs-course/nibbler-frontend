@@ -6,10 +6,11 @@ import { CardSelfcarePopupComponent } from './components/card-selfcare-popup/car
 import { RouterModule } from '@angular/router';
 import { InputComponent } from './components/input/input.component';
 import { SpeechBubbleComponent } from './components/speech-bubble/speech-bubble.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, SpeechBubbleComponent, InputComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, RouterModule, InputComponent],
+  imports: [CommonModule, RouterModule, MatStepperModule],
+  exports: [ButtonComponent, CardPopupComponent, CardSelfcarePopupComponent, SpeechBubbleComponent, RouterModule, InputComponent],
 })
 export class SharedModule {}
