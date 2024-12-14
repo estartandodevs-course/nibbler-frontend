@@ -1,6 +1,11 @@
 <div class="field">
-  <input [type]="type" [attr.aria-label]="ariaLabel" [attr.placeholder]="placeholder" [name]="name"
-    [attr.required]="required ? '' : null" [id]="name" />
+  <input
+    [type]="type"
+    [attr.aria-label]="ariaLabel"
+    [attr.placeholder]="placeholder"
+    [name]="name"
+    [attr.required]="required ? '' : null"
+    [id]="name" />
   <label [for]="name">{{ title }}</label>
   <ng-content></ng-content>
 </div>

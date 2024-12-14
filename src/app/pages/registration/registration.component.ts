@@ -22,10 +22,11 @@ export class RegistrationComponent implements OnInit {
     // Inicializando a propriedade 'form' no ngOnInit
     this.form = this.fb.group({
       nome: ['', Validators.required],
-      dataNascimento: ['', Validators.required],
+      dataDeNascimento: ['', Validators.required],
       email: ['', Validators.required],
       senha: ['', Validators.required],
       diagnostico: ['', Validators.required],
+      foto: [''],
       desafios: this.fb.group({
         procrastinacao: [false],
         dificuldadeFoco: [false],
@@ -54,21 +55,32 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
     this.load = true;
-    const dados = this.form.value;
+    // const dados = this.form.value;
 
-    this.usuarioService.cadastrarUsuario(dados).subscribe(
-      (response) => {
+    const dados = { ...this.form.value };
+
+    if (dados.dataDeNascimento) {
+      const date = new Date(dados.dataDeNascimento); // Cria o objeto Date
+      dados.dataDeNascimento = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}/${date.getFullYear()}`;
+    }
+
+    this.usuarioService.cadastrarUsuario(dados).subscribe({
+      next: (response) => {
         console.log('Usuário cadastrado com sucesso!', response);
+        console.log('Dados', dados);
         this.isConfirmed = true;
         this.load = false;
       },
-      (error) => {
+      error: (error) => {
         console.error('Erro ao cadastrar usuário', error);
+        console.log('Dados', dados);
         this.isConfirmed = true;
 
         this.load = false;
       },
-    );
+    });
   }
 }
 
