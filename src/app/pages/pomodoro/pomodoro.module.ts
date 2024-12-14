@@ -7,9 +7,10 @@ import { TimerPomodoroComponent } from './timer-pomodoro/timer-pomodoro.componen
 import { HomePomodoroComponent } from './home-pomodoro/home-pomodoro.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { SelfCareComponent } from './self-care/self-care.component';
 
 @NgModule({
-  declarations: [TimerPomodoroComponent, HomePomodoroComponent],
+  declarations: [TimerPomodoroComponent, HomePomodoroComponent, SelfCareComponent],
   imports: [CommonModule, PomodoroRoutingModule, SharedModule, FormsModule],
 })
 export class PomodoroModule {}

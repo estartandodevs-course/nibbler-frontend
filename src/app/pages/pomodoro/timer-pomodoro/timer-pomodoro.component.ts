@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-timer-pomodoro',
@@ -20,8 +21,20 @@ export class TimerPomodoroComponent implements OnInit {
   previousFocusTime: number = 25 * 60;
   audioPlayer: HTMLAudioElement | null = null;
 
-  isNoteOpen: boolean = true;
+  isNoteOpen: boolean = false;
   noteContent: string = '';
+  showPopup: boolean = false;
+
+  constructor(private router: Router) {}
+
+  navigateToSelfCare(): void {
+    this.router.navigate(['/pomodoro/self-care']);
+    this.closePopup();
+  }
+
+  closePopup(): void {
+    this.showPopup = false;
+  }
 
   toggleNote(): void {
     this.isNoteOpen = !this.isNoteOpen;
@@ -57,7 +70,6 @@ export class TimerPomodoroComponent implements OnInit {
 
   setActiveMode(mode: string): void {
     this.stopSound();
-
     const selectedMode = this.modes.find((m) => m.value === mode);
     if (!selectedMode) return;
 
@@ -76,7 +88,6 @@ export class TimerPomodoroComponent implements OnInit {
 
     this.activeMode = mode;
     this.saveState();
-
     this.startTimer();
   }
 
@@ -97,10 +108,7 @@ export class TimerPomodoroComponent implements OnInit {
     if (this.interval) clearInterval(this.interval);
 
     this.isRunning = true;
-
-    if (this.activeMode === 'focus') {
-      this.playSound('background');
-    }
+    this.playSound('background');
 
     this.interval = setInterval(() => {
       if (this.timerValue > 0) {
@@ -108,9 +116,11 @@ export class TimerPomodoroComponent implements OnInit {
       } else {
         this.stopTimer();
         this.playSound('alarm');
-        alert(`${this.activeMode === 'focus' ? 'Tempo de foco' : 'Pausa'} acabou!`);
 
-        if (this.activeMode !== 'focus') {
+        if (this.activeMode === 'focus') {
+          this.showPopup = true;
+        } else {
+          alert(`${this.activeMode === 'focus' ? 'Tempo de foco' : 'Pausa'} acabou!`);
           this.setActiveMode('focus');
         }
       }
@@ -155,7 +165,6 @@ export class TimerPomodoroComponent implements OnInit {
     });
 
     localStorage.setItem('modes', JSON.stringify(this.modes));
-
     localStorage.setItem('selectedSound', soundSelect);
     localStorage.setItem('selectedAlarm', alarmSelect);
 
@@ -171,8 +180,6 @@ export class TimerPomodoroComponent implements OnInit {
     this.stopSound();
 
     const soundFile = localStorage.getItem(type === 'background' ? 'selectedSound' : 'selectedAlarm');
-    console.log(`Playing ${type} sound:`, soundFile);
-
     if (soundFile && soundFile !== 'none') {
       this.audioPlayer = new Audio(`assets/sounds/${soundFile}.mp3`);
       this.audioPlayer.loop = type === 'background';
